@@ -1,0 +1,7 @@
+= form_for [@tweet] do |f|
+  = f.text_field :text, placeholder: 'type a message'
+  = f.file_field :image
+  = f.submit 'Send'
+- @tweets.each do |tweet|
+  = tweet.text
+  = image_tag tweet.image.url if tweet.image.present?
